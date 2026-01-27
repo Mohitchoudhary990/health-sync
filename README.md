@@ -127,16 +127,11 @@ npm run dev
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
-## 📄 License
 
-MIT License
 
 ## 👨‍💻 Author
 
-Your Name
+Mohit 
 
-## 🙏 Acknowledgments
-
-- React documentation
 - MongoDB documentation
 - Express.js documentation
