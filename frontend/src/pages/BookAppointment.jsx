@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../utils/api';
+import AvailabilityCalendar from '../components/AvailabilityCalendar';
 import '../styles/pages/BookAppointment.css';
 
 const BookAppointment = () => {
@@ -215,6 +216,17 @@ const BookAppointment = () => {
                         {error && <div className="alert alert-error">{error}</div>}
 
                         <form onSubmit={handleSubmit} className="booking-form">
+                            {/* Visual Availability Calendar */}
+                            {doctor && doctor.availability && (
+                                <AvailabilityCalendar
+                                    doctorAvailability={doctor.availability}
+                                    selectedDate={formData.appointmentDate}
+                                    onDateSelect={handleDateChange}
+                                    minDate={getMinDate()}
+                                    maxDate={getMaxDate()}
+                                />
+                            )}
+
                             <div className="form-group">
                                 <label htmlFor="appointmentDate">Select Date</label>
                                 {doctor && doctor.availability && doctor.availability.length > 0 && (
